@@ -30,14 +30,6 @@ def pageNotFount(error):
     return render_template('404.html', title="Страница не найдена", menu=menu)
 
 
-@app.route("/")
-def index():
-    print(g)
-    g.tt = 'dd'
-    print(g.tt)
-    return render_template('index.html', title="Главная страница", menu=menu)
-
-
 @app.route("/about")
 def about():
     print(g.tt)
@@ -52,7 +44,3 @@ def contact():
         else:
             flash('Ошибка отправки', category='error')
     return render_template('contact.html', title="Обратная связь", menu=menu)
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
